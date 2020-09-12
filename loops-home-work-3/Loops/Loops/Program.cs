@@ -46,22 +46,47 @@ namespace Loops
             Console.WriteLine($"Quantity of even numbers is: {iterator}");
 
             //Task3
-            int x = 1;
-            int firstWord = 0;
-            int secondWord = 1;
+
             int lenght = 1000;
 
-            BigInteger[] tab = new BigInteger[lenght];
-            tab[0] = 0;
-            tab[1] = 1;
+            BigInteger[] arrayForFibonnaciNumbers = new BigInteger[lenght];
+            arrayForFibonnaciNumbers[0] = 0;
+            arrayForFibonnaciNumbers[1] = 1;
+
             for (int i = 2; i < 999; i++)
             {
-                tab[i] = tab[i - 1] + tab[i - 2];
+                arrayForFibonnaciNumbers[i] = arrayForFibonnaciNumbers[i - 1] + arrayForFibonnaciNumbers[i - 2];
             }
-            for (int i = 0; i < tab.Length; i++)
+            for (int i = 0; i < arrayForFibonnaciNumbers.Length; i++)
             {
-                Console.WriteLine($"{tab[i]}");
+                //Console.WriteLine($"{arrayForFibonnaciNumbers[i]}");
             }
+
+            //Task 4
+            int helper = 1;
+            int helper2 = 1;
+            Console.WriteLine("Enter your number: ");
+            bool loading = int.TryParse(Console.ReadLine(), out int userNumber);
+
+            if (loading) { 
+            for (int i = 1; i < userNumber; i++)
+            {
+
+                Console.Write(i + " ");
+                if (helper == helper2)
+                {
+                    Console.WriteLine();
+                    helper2 = 0;
+                    helper++;
+                }
+                helper2++;
+            }
+            }
+            else
+            {
+                Console.WriteLine("Data is incorrect");
+            }
+
         }
     }
 }
