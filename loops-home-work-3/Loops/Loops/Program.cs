@@ -12,7 +12,7 @@ namespace Loops
 
             //Task 1
             // I used short because I don't need such a large scope.
-            Console.WriteLine("Task 1");
+            WriteTaskNumber(1);
 
             short quantityPrimeNumbers = 0;
             for (short i = 2; i <= 100; i++)
@@ -34,15 +34,14 @@ namespace Loops
 
             Console.WriteLine($"Quantity of the prime numbers is: {quantityPrimeNumbers}");
 
-            Console.WriteLine("If yout want to see next question press any key...");
-            Console.ReadKey();
-            Console.Clear();
+            KeepGoing();
 
             //Task 2
-            Console.WriteLine("Task 2");
+            WriteTaskNumber(2);
 
             short counter = 0;
             short iterator = 0;
+
             do
             {
                 if (counter % 2 == 0 && counter != 0)
@@ -54,15 +53,12 @@ namespace Loops
 
             Console.WriteLine($"Quantity of even numbers is: {iterator}");
 
-            Console.WriteLine("If yout want to see next question press any key...");
-            Console.ReadKey();
-            Console.Clear();
+            KeepGoing();
 
             //Task3
-            Console.WriteLine("Task 3");
+            WriteTaskNumber(3);
 
             int lenght = 1000;
-
             BigInteger[] arrayForFibonnaciNumbers = new BigInteger[lenght];
             arrayForFibonnaciNumbers[0] = 0;
             arrayForFibonnaciNumbers[1] = 1;
@@ -76,15 +72,15 @@ namespace Loops
                 Console.WriteLine($"{arrayForFibonnaciNumbers[i]}");
             }
 
-            Console.WriteLine("If yout want to see next question press any key...");
-            Console.ReadKey();
-            Console.Clear();
+            KeepGoing();
+
 
             //Task 4
-            Console.WriteLine("Task 4");
+            WriteTaskNumber(4);
 
             int helper = 1;
             int helper2 = 1;
+
             Console.WriteLine("Enter your number: ");
             bool loading = int.TryParse(Console.ReadLine(), out int userNumber);
 
@@ -108,12 +104,10 @@ namespace Loops
                 Console.WriteLine("Data is incorrect");
             }
 
-            Console.WriteLine("If yout want to see next question press any key...");
-            Console.ReadKey();
-            Console.Clear();
+            KeepGoing();
 
             //Task 5
-            Console.WriteLine("Task 5");
+            WriteTaskNumber(5);
 
             int smallerDiamondBase = 22;
             int numeberOfSpacious = 1;
@@ -150,19 +144,46 @@ namespace Loops
             }
             Console.WriteLine(topOfTheDiamond.Insert(topOfTheDiamond.Length, bottomOfTheDiamond));
 
-            Console.WriteLine("If yout want to see next question press any key...");
-            Console.ReadKey();
-            Console.Clear();
+            KeepGoing();
 
             //Task 6
-            Console.WriteLine("Task 6");
+            WriteTaskNumber(6);
+
             string exampleString = "c d e f g a h c";
 
             for (int i = exampleString.Length; i > 0; i--)
             {
-                Console.Write(exampleString[i-1]);
+                Console.Write(exampleString[i - 1]);
             }
 
+            KeepGoing();
+
+            //Task 7
+            WriteTaskNumber(7);
+
+            int decimalNumber = 21;
+            var binaryNumber = new StringBuilder();
+
+            while (decimalNumber != 0)
+            {
+                binaryNumber.Insert(0, decimalNumber % 2);
+                decimalNumber = decimalNumber / 2;
+            }
+            Console.WriteLine("Binary number: " + binaryNumber);
+
+            KeepGoing();
+        }
+        public static void KeepGoing()
+        {
+            Console.WriteLine("\n If yout want to see next exercise press any key...");
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+        public static void WriteTaskNumber(int taskNumber)
+        {
+            Console.WriteLine($"Task {taskNumber}");
         }
     }
+
 }
