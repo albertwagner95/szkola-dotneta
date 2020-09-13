@@ -36,6 +36,7 @@ namespace Loops
 
             KeepGoing();
 
+
             //Task 2
             WriteTaskNumber(2);
 
@@ -109,6 +110,27 @@ namespace Loops
             //Task 5
             WriteTaskNumber(5);
 
+            for (int i = 1; i < 21; i++)
+            {
+                Console.WriteLine($"The third power of a number {i} is: {Math.Pow(i, 3)}");
+            }
+
+            KeepGoing();
+
+            //Task 6
+            WriteTaskNumber(6);
+            double sumNumber = 1.0;
+            for (int i = 2; i < 21; i++)
+            {
+                Console.WriteLine($"Sum numbers {sumNumber} and 1/{i} = {sumNumber + (1.0 / (double)i)} ");
+                sumNumber = sumNumber + (1.0 / i);
+            }
+            Console.WriteLine($"The sum of all numbers is: {sumNumber}");
+            KeepGoing();
+
+            //Task 7
+            WriteTaskNumber(7);
+
             int smallerDiamondBase = 22;
             int numeberOfSpacious = 1;
 
@@ -146,8 +168,8 @@ namespace Loops
 
             KeepGoing();
 
-            //Task 6
-            WriteTaskNumber(6);
+            //Task 8
+            WriteTaskNumber(8);
 
             string exampleString = "c d e f g a h c";
 
@@ -158,8 +180,8 @@ namespace Loops
 
             KeepGoing();
 
-            //Task 7
-            WriteTaskNumber(7);
+            //Task 9
+            WriteTaskNumber(9);
 
             int decimalNumber = 21;
             var binaryNumber = new StringBuilder();
@@ -172,6 +194,25 @@ namespace Loops
             Console.WriteLine("Binary number: " + binaryNumber);
 
             KeepGoing();
+
+            //Task 10
+            int numberOne = 24;
+            int numberTwo = 36;
+
+            Console.WriteLine($"nnw = {numberOne/NWD(numberOne,numberTwo)*numberTwo}");
+            Console.WriteLine("Thank you for atention!");
+
+        }
+        public static int NWD(int numberOne, int numberTwo)
+        {
+            int helper;
+            while (numberTwo != 0)
+            {
+                helper = numberTwo;
+                numberTwo = numberOne % numberTwo;
+                numberOne = helper;
+            }
+            return numberOne;
         }
         public static void KeepGoing()
         {
@@ -179,11 +220,10 @@ namespace Loops
             Console.ReadKey();
             Console.Clear();
         }
-
+    
         public static void WriteTaskNumber(int taskNumber)
         {
             Console.WriteLine($"Task {taskNumber}");
         }
     }
-
 }
